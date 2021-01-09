@@ -36,7 +36,7 @@ df
 
 # Summary of selected data
 chart = alt.Chart(df).mark_bar().encode(
-    x='Freedom()',
+    x='Freedom',
     y='Generosity',
     color='Continent'
 ).properties(
@@ -44,7 +44,7 @@ chart = alt.Chart(df).mark_bar().encode(
     height=200
 ) | alt.Chart(df).mark_bar().encode(
     alt.X("year(Year):N"),
-    y='Corruption()',
+    y='Corruption',
     color='Continent'
 ).properties(
     width=300,
