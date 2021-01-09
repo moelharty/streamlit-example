@@ -27,11 +27,11 @@ In this demo, we are going to analyze world happiness report data. You can filte
 # Sidebar Controls
 st.sidebar.header('Filter Data:')
 year = st.sidebar.slider('Year', 2015, 2019, (2015,2019))
-origin = st.sidebar.multiselect('Continent', ['Europe', 'North America', 'Oceania','Asia','South America','Africa'], ['Europe', 'North America', 'Oceania','Asia','South America','Africa'])
+Continent = st.sidebar.multiselect('Continent', ['Europe', 'North America', 'Oceania','Asia','South America','Africa'], ['Europe', 'North America', 'Oceania','Asia','South America','Africa'])
 
 # Filter data by sidebar inputs:
-data = df[(df['Year'].dt.year.between(year[0],year[1])) & (df['Origin'].isin(origin))]
-df
+data = df[(df['Year'].dt.year.between(year[0],year[1])) & (df['Continent'].isin(Continent))]
+data
 
 # Summary of selected data
 chart = alt.Chart(df).mark_bar().encode(
