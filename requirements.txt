@@ -1,6 +1,11 @@
-altair
+#python dependencies
+numpy
 pandas
+scikit-learn
+scipy
+matplotlib
+seaborn
+altair
+vega
+vega_datasets
 streamlit
-pandas==1.1.3
-streamlit==0.73.1
-scikit_learn==0.24.0
