@@ -5,7 +5,6 @@ from vega_datasets import data
 
 import pandas as pd
 import numpy as np
-safasfasfasf
 # Streamlit
 # Page: https://www.streamlit.io/
 # Repo: https://github.com/streamlit/streamlit
