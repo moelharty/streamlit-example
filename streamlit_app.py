@@ -52,12 +52,12 @@ chart
 
 st.markdown('## Projection of world happiness')
 
-projcars = df.dropna().reset_index(drop=True)
+projdf = df.dropna().reset_index(drop=True)
 
 features = st.multiselect('Features to project:', ["Freedom", "Generosity",'Happiness Rank','Happiness Score','Social Support','Life Expectancy'], ["Freedom", "Generosity",'Happiness Rank','Happiness Score','Social Support','Life Expectancy'])
 method_name = st.selectbox('Projection method:', ('PCA', 'MDS', 'TSNE'))
 
-projData = projcars.drop(projcars.columns.difference(features), axis=1)
+projData = projdf.drop(projdf.columns.difference(features), axis=1)
 
 projData
 
@@ -82,12 +82,12 @@ placeholder.text('calculating...')
   
 
 pos = pd.DataFrame(method.fit_transform(projData), columns=['x','y'])
-projcars = pd.concat([projcars, pos.reset_index(drop=True)], axis='columns')
+projdf = pd.concat([projdf, pos.reset_index(drop=True)], axis='columns')
 
 placeholder.empty()
 color = st.selectbox('Color by:', ("Freedom", "Generosity",'Happiness Rank','Happiness Score','Social Support','Life Expectancy','Year'))
 # We use a point as mark
-chart = alt.Chart(projcars).mark_point().encode(
+chart = alt.Chart(projdf).mark_point().encode(
     x='x',
     y='y',
     color=color
