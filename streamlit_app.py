@@ -1,7 +1,7 @@
 import streamlit as st
 
 import altair as alt
-
+from vega_datasets import data
 
 import pandas as pd
 import numpy as np
@@ -30,7 +30,7 @@ year = st.sidebar.slider('Year', 2015, 2019, (2015,2019))
 origin = st.sidebar.multiselect('Continent', ['Europe', 'North America', 'Oceania','Asia','South America','Africa'], ['Europe', 'North America', 'Oceania','Asia','South America','Africa'])
 
 # Filter data by sidebar inputs:
-df = df[(df['Year'].dt.Year.between(Year[0],Year[1])) & (df['Continent'].isin(Continent))]
+data = df[(df['Year'].dt.year.between(year[0],year[1])) & (df['Origin'].isin(origin))]
 df
 
 # Summary of selected data
