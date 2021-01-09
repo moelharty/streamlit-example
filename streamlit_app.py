@@ -31,21 +31,21 @@ year = st.sidebar.slider('Year', 2015, 2019, (2015,2019))
 origin = st.sidebar.multiselect('Continent', ['Europe', 'North America', 'Oceania','Asia','South America','Africa'], ['Europe', 'North America', 'Oceania','Asia','South America','Africa'])
 
 # Filter data by sidebar inputs:
-df = df[(df['Year'].dt.Year.between(Year[0],Year[1])) & (df['Continent'].isin(Continent))]
+#df = df[(df['Year'].dt.Year.between(Year[0],Year[1])) & (df['Continent'].isin(Continent))]
 df
 
 # Summary of selected data
-chart = alt.Chart(cars).mark_bar().encode(
-    x='count()',
-    y='Origin',
-    color='Origin'
+chart = alt.Chart(df).mark_bar().encode(
+    x='Freedom()',
+    y='Generosity',
+    color='Continent'
 ).properties(
     width=300,
     height=200
-) | alt.Chart(cars).mark_bar().encode(
+) | alt.Chart(df).mark_bar().encode(
     alt.X("year(Year):N"),
-    y='count()',
-    color='Origin'
+    y='Corruption()',
+    color='Continent'
 ).properties(
     width=300,
     height=200
