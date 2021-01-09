@@ -55,7 +55,7 @@ st.markdown('## Projection of cars')
 
 projcars = df.dropna().reset_index(drop=True)
 
-features = st.multiselect('Features to project:', ["Freedom", "Generosity",'Happiness Rank','Happiness Score','Socia Support','Life Expectancy',], ["Freedom", "Generosity",'Happiness Rank','Happiness Score','Socia Support','Life Expectancy'])
+features = st.multiselect('Features to project:', ["Freedom", "Generosity",'Happiness Rank','Happiness Score','Socia Support','Life Expectancy'], ["Freedom", "Generosity",'Happiness Rank','Happiness Score','Socia Support','Life Expectancy'])
 method_name = st.selectbox('Projection method:', ('PCA', 'MDS', 'TSNE'))
 
 projData = projcars.drop(projcars.columns.difference(features), axis=1)
@@ -86,7 +86,7 @@ pos = pd.DataFrame(method.fit_transform(projData), columns=['x','y'])
 projcars = pd.concat([projcars, pos.reset_index(drop=True)], axis='columns')
 
 placeholder.empty()
-color = st.selectbox('Color by:', ("Freedom", "Generosity",'Happiness Rank','Happiness Score','Socia Support','Life Expectancy','Year'))
+color = st.selectbox('Color by:', ("Freedom", "Generosity",'Happiness Rank','Happiness Score','Social Support','Life Expectancy','Year'))
 # We use a point as mark
 chart = alt.Chart(projcars).mark_point().encode(
     x='x',
