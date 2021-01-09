@@ -31,7 +31,7 @@ year = st.sidebar.slider('Year', 2015, 2019, (2015,2019))
 origin = st.sidebar.multiselect('Continent', ['Europe', 'North America', 'Oceania','Asia','South America','Africa'], ['Europe', 'North America', 'Oceania','Asia','South America','Africa'])
 
 # Filter data by sidebar inputs:
-#df = df[(df['Year'].dt.year.between(year[0],year[1])) & (df['Continent'].isin(Continent))]
+df = df[(df['Year'].dt.Year.between(Year[0],Year[1])) & (df['Continent'].isin(Continent))]
 df
 
 # Summary of selected data
