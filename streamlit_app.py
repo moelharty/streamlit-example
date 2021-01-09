@@ -55,7 +55,7 @@ st.markdown('## Projection of cars')
 
 projcars = df.dropna().reset_index(drop=True)
 
-features = st.multiselect('Features to project:', ["Freedom", "Generosity",'Happiness Rank','Happiness Score','Socia Support','Life Expectancy'], ["Freedom", "Generosity",'Happiness Rank','Happiness Score','Socia Support','Life Expectancy'])
+features = st.multiselect('Features to project:', ["Freedom", "Generosity",'Happiness Rank','Happiness Score','Social Support','Life Expectancy'], ["Freedom", "Generosity",'Happiness Rank','Happiness Score','Social Support','Life Expectancy'])
 method_name = st.selectbox('Projection method:', ('PCA', 'MDS', 'TSNE'))
 
 projData = projcars.drop(projcars.columns.difference(features), axis=1)
