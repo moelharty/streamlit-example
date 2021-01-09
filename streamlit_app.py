@@ -1,9 +1,7 @@
 import streamlit as st
 
 import altair as alt
-pandas==1.1.3
-streamlit==0.73.1
-scikit_learn==0.24.0
+
 
 import pandas as pd
 import numpy as np
