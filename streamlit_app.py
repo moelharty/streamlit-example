@@ -43,7 +43,7 @@ chart = alt.Chart(df).mark_bar().encode(
     width=300,
     height=200
 ) | alt.Chart(df).mark_bar().encode(
-    alt.X("year(Year):N"),
+    x='Happiness Score',
     y='Corruption',
     color='Continent'
 ).properties(
@@ -63,7 +63,7 @@ projData = projcars.drop(projcars.columns.difference(features), axis=1)
 
 projData
 
-#from sklearn import manifold
+from sklearn import manifold
 from sklearn import decomposition
 
 
