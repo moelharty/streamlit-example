@@ -16,7 +16,7 @@ import numpy as np
 #   * Streamlit
 
 df = pd.read_csv('df.csv')
-
+print(df)
 st.title('world happiness')
 st.markdown(
 """
