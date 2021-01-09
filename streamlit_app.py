@@ -50,7 +50,7 @@ chart = alt.Chart(df).mark_bar().encode(
 )
 chart
 
-st.markdown('## Projection of cars')
+st.markdown('## Projection of world happiness')
 
 projcars = df.dropna().reset_index(drop=True)
 
