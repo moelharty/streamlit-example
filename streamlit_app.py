@@ -37,39 +37,8 @@ chart = alt.Chart(data).mark_bar().encode(
 ).properties(
     width=300,
     height=200
-) | alt.Chart(data).mark_bar().encode(
-    alt.data("year(Year):N"),
-    y='count()',
-    color='Continent'
-).properties(
-    width=300,
-    height=200
-)
+) 
 chart
-
-
-
-
-
-input_dropdown = alt.binding_select(options=[2015.0,2016.0,2017.0,2018.0,2019.0])
-selection = alt.selection_single(fields=['Year'], bind=input_dropdown, name='Which  ')
-color = alt.condition(selection,
-                    alt.Color('Year:N', legend=None),
-                    alt.value('lightgray'))
-chart = alt.Chart(df).mark_point().encode(y='Happiness Score:Q',color='Continent:N',
-    tooltip='Country:N')
-chart.encode(x='Social Support:Q').add_selection(
-    selection
-).transform_filter(
-    selection
-) | chart.encode(x='Freedom:Q').add_selection(
-    selection
-).transform_filter(
-    selection
-) & chart.encode(x='Generosity:Q').add_selection(
-    selection
-).transform_filter(
-    selection)
 
 
 st.markdown('## Projection of world happiness')
