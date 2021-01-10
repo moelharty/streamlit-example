@@ -24,17 +24,23 @@ In this demo, we are going to analyze world happiness report data. You can filte
 )
 
 # Sidebar Controls
-#st.sidebar.header('Filter Data:')
-#year = st.sidebar.slider('Year', 2015, 2019, (2015,2019))
-#Continent = st.sidebar.multiselect('Continent', ['Europe', 'North America', 'Oceania','Asia','South America','Africa'], ['Europe', 'North America', 'Oceania','Asia','South America','Africa'])
+st.sidebar.header('Filter Data:')
+year = st.sidebar.slider('Year', 2015, 2019, (2015,2019))
+Continent = st.sidebar.multiselect('Continent', ['Europe', 'North America', 'Oceania','Asia','South America','Africa'], ['Europe', 'North America', 'Oceania','Asia','South America','Africa'])
 
-# Filter data by sidebar inputs:
-#data = df[(df['Year'].dt.year.between(year[0],year[1])) & (df['Continent'].isin(Continent))]
-#data
+#Filter data by sidebar inputs:
+data = df[(df['Year'].dt.year.between(year[0],year[1])) & (df['Continent'].isin(Continent))]
+data
 
 
 
 # Summary of selected data
+
+
+
+
+
+
 input_dropdown = alt.binding_select(options=[2015.0,2016.0,2017.0,2018.0,2019.0])
 selection = alt.selection_single(fields=['Year'], bind=input_dropdown, name='Which  ')
 color = alt.condition(selection,
@@ -54,14 +60,6 @@ chart.encode(x='Social Support:Q').add_selection(
     selection
 ).transform_filter(
     selection)
-
-
-plt.figure(figsize=(10,6))
-
-heatmap = sns.heatmap(df.corr(), vmin=-1,vmax=1, annot=True, cmap='viridis')
-
-heatmap.set_title('Correlation Heatmap', fontdict={'fontsize':12}, pad=12)
-plt.show()
 
 
 st.markdown('## Projection of world happiness')
