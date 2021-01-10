@@ -39,7 +39,7 @@ chart = alt.Chart(data).mark_bar().encode(
     height=200
 ) | alt.Chart(data).mark_bar().encode(
     x='Social Support'
-    y='Generosity',
+    y='Generosity'
     color='Continent'
 ).properties(
     width=300,
