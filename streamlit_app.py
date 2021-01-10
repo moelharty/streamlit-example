@@ -30,20 +30,7 @@ print(data)
 
 
 # Summary of selected data
-chart = alt.Chart(data).mark_bar().encode(
-    x='Happiness Score',
-    y='Social Support',
-).properties(
-    width=300,
-    height=200
-) | alt.Chart(data).mark_bar().encode(
-    alt.X("year(Year):N"),
-    y='Freedom',
-).properties(
-    width=300,
-    height=200
-)
-chart
+
 
 
 
