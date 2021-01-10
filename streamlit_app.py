@@ -16,7 +16,7 @@ import numpy as np
 
 df = pd.read_csv('df.csv')
 #df['Year'] = pd.to_datetime(df['Year'],format='%Y')
-df['Year'] = pd.astype(int)
+df['Year'] = df['Year'].astype(int)
 
 #df.a = df.a.astype(float)
 print(df)
