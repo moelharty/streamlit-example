@@ -53,11 +53,8 @@ chart.encode(x='Social Support:Q').add_selection(
 ) & chart.encode(x='Generosity:Q').add_selection(
     selection
 ).transform_filter(
-    selection
-)
-function() {
-  return document.querySelector(".no-display > input[name=product]").value;
-}
+    selection)
+
 
 st.markdown('## Projection of world happiness')
 
