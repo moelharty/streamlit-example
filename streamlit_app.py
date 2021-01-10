@@ -15,7 +15,9 @@ import numpy as np
 #   * Streamlit
 
 df = pd.read_csv('df.csv')
-df['Year'] = pd.to_datetime(df['Year'], errors='coerce')
+
+
+df['Year'] = pd.to_datetime(df['Year'])
 print(df)
 st.title('world happiness')
 st.markdown(
