@@ -31,6 +31,11 @@ In this demo, we are going to analyze world happiness report data. You can filte
 # Filter data by sidebar inputs:
 #data = df[(df['Year'].dt.year.between(year[0],year[1])) & (df['Continent'].isin(Continent))]
 #data
+selection = alt.selection_interval(bind='scales')
+brush = alt.selection_interval(encodings=['x'])
+chart = alt.Chart(df).mark_point().encode(y='Happiness Score:Q',color=alt.condition(brush, 'Happiness Rank', alt.value('lightgray'))).properties(width=250,height=250).add_selection(brush)
+chart.encode(x='Social Support:Q') & chart.encode(x='Freedom:Q') | chart.encode(x='Generosity:Q')
+
 
 # Summary of selected data
 chart = alt.Chart(df).mark_bar().encode(
