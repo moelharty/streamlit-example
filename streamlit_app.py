@@ -40,7 +40,7 @@ chart = alt.Chart(data).mark_bar().encode(
 ) | alt.Chart(data).mark_bar().encode(
     x='Continent',
     y='Life Expectancy',
-    color='Year'
+    color='Continent'
 ).properties(
     width=300,
     height=200
