@@ -5,18 +5,9 @@ from vega_datasets import data
 
 import pandas as pd
 import numpy as np
-# Streamlit
-# Page: https://www.streamlit.io/
-# Repo: https://github.com/streamlit/streamlit
-# Author: Adrian Treuille (https://www.streamlit.io/about)
-#   * Prof @ Carnegie Mellon University 
-#   * Google X
-#   * ZOOX (Self Driving Cars)
-#   * Streamlit
+
 
 df = pd.read_csv('df.csv')
-#df['Year'] = pd.to_datetime(df['Year'],format='%Y')
-#df['Year'] = pd.to_datetime(df['Year'],format='%Y')
 print(df)
 st.title('world happiness')
 st.markdown(
