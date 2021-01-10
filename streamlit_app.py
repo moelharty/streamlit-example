@@ -31,15 +31,15 @@ print(data)
 
 # Summary of selected data
 chart = alt.Chart(data).mark_bar().encode(
-    x='count()',
+    x='Happiness Rank',
     y='Continent',
     color='Continent'
 ).properties(
     width=300,
     height=200
 ) | alt.Chart(data).mark_bar().encode(
-    x='Continent',
-    y='Life Expectancy',
+    y='Continent',
+    x='Freedom',
     color='Continent'
 ).properties(
     width=300,
