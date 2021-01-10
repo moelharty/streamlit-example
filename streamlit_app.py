@@ -37,7 +37,7 @@ chart = alt.Chart(data).mark_bar().encode(
 ).properties(
     width=300,
     height=200
-) | alt.Chart(cars).mark_bar().encode(
+) | alt.Chart(data).mark_bar().encode(
     alt.X("year(Year):N"),
     y='Freedom',
     color='Continent'
