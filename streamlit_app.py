@@ -38,7 +38,7 @@ chart = alt.Chart(data).mark_bar().encode(
     width=300,
     height=200
 ) | alt.Chart(data).mark_bar().encode(
-    alt.X("year(Year):N"),
+    alt.data("year(Year):N"),
     y='count()',
     color='Continent'
 ).properties(
