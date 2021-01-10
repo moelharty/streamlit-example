@@ -37,7 +37,15 @@ chart = alt.Chart(data).mark_bar().encode(
 ).properties(
     width=300,
     height=200
-) 
+) | alt.Chart(data).mark_bar().encode(
+    x='count()',
+    y='Year',
+    color='Generosity'
+).properties(
+    width=300,
+    height=200
+)
+
 chart
 
 
