@@ -97,4 +97,4 @@ chart = alt.Chart(projdf).mark_point().encode(
 )
 chart
 
-projcars
+projdf
