@@ -65,7 +65,7 @@ chart.encode(x='Social Support:Q').add_selection(
 
 st.markdown('## Projection of world happiness')
 
-projdf = df.dropna().reset_index(drop=True)
+projdf = data.dropna().reset_index(drop=True)
 
 features = st.multiselect('Features to project:', ["Freedom", "Generosity",'Happiness Rank','Happiness Score','Social Support','Life Expectancy'], ["Freedom", "Generosity",'Happiness Rank','Happiness Score','Social Support','Life Expectancy'])
 method_name = st.selectbox('Projection method:', ('PCA', 'MDS', 'TSNE'))
