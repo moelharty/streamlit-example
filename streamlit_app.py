@@ -33,7 +33,7 @@ print(data)
 chart = alt.Chart(data).mark_bar().encode(
     x='Year',
     y='Happiness Score',
-    color='Continent'
+    color='Year'
 ).properties(
     width=300,
     height=200
