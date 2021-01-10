@@ -92,7 +92,7 @@ pos = pd.DataFrame(method.fit_transform(projData), columns=['x','y'])
 projdf = pd.concat([projdf, pos.reset_index(drop=True)], axis='columns')
 
 placeholder.empty()
-color = st.selectbox('Color by:', ("Freedom", "Generosity",'Happiness Rank','Happiness Score','Social Support','Life Expectancy','Year','Continent','Country'))
+color = st.selectbox('Color by:', ('Continent','Country', "Freedom", "Generosity",'Happiness Rank','Social Support','Life Expectancy'))
 # We use a point as mark
 chart = alt.Chart(projdf).mark_point().encode(
     x='x',
