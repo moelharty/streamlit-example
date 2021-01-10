@@ -38,8 +38,8 @@ chart = alt.Chart(data).mark_bar().encode(
     width=300,
     height=200
 ) | alt.Chart(data).mark_bar().encode(
-    x='Social Support',
-    y='Generosity',
+    alt.X("year(Year):N"),
+    y='count()',
     color='Continent'
 ).properties(
     width=300,
