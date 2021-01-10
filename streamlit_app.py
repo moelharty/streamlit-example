@@ -15,7 +15,10 @@ import numpy as np
 #   * Streamlit
 
 df = pd.read_csv('df.csv')
-df['Year'] = pd.to_datetime(df['Year'],format='%Y')
+#df['Year'] = pd.to_datetime(df['Year'],format='%Y')
+df['Year'] = pd.astype(int)
+
+#df.a = df.a.astype(float)
 print(df)
 st.title('world happiness')
 st.markdown(
