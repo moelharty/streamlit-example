@@ -31,14 +31,14 @@ print(data)
 
 # Summary of selected data
 chart = alt.Chart(data).mark_bar().encode(
-    y='count()',
-    x='Continent',
+    x='count()',
+    y='Continent',
     color='Continent'
 ).properties(
     width=300,
     height=200
 ) | alt.Chart(data).mark_bar().encode(
-    alt.X("Year(Year):N"),
+    alt.X("year(Year):N"),
     y='count()',
     color='Continent'
 ).properties(
