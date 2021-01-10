@@ -15,7 +15,7 @@ import numpy as np
 #   * Streamlit
 
 df = pd.read_csv('df.csv')
-df['Year'] = pd.to_datetime(df['Year'],format='%Y')
+#df['Year'] = pd.to_datetime(df['Year'],format='%Y')
 #df['Year'] = pd.to_datetime(df['Year'],format='%Y')
 print(df)
 st.title('world happiness')
@@ -31,7 +31,9 @@ year = st.sidebar.slider('Year', 2015, 2019, (2015,2019))
 Continent = st.sidebar.multiselect('Continent', ['Europe', 'North America', 'Oceania','Asia','South America','Africa'], ['Europe', 'North America', 'Oceania','Asia','South America','Africa'])
 
 #Filter data by sidebar inputs:
-data = df[(df['Year'].dt.year.between(year[0],year[1])) & (df['Continent'].isin(Continent))]
+data = df[(df['Year'].isin(year)) & (df['Continent'].isin(Continent))]
+
+#data = df[(df['Year'].dt.year.between(year[0],year[1])) & (df['Continent'].isin(Continent))]
 print(data)
 
 
