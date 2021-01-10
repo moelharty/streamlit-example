@@ -35,10 +35,26 @@ In this demo, we are going to analyze world happiness report data. You can filte
 
 
 # Summary of selected data
-selection = alt.selection_interval(bind='scales')
-brush = alt.selection_interval(encodings=['x'])
-chart = alt.Chart(df).mark_point().encode(y='Happiness Score:Q',color=alt.condition(brush, 'Happiness Rank', alt.value('lightgray'))).properties(width=250,height=250).add_selection(brush)
-chart.encode(x='Social Support:Q') & chart.encode(x='Freedom:Q') | chart.encode(x='Generosity:Q')
+input_dropdown = alt.binding_select(options=[2015.0,2016.0,2017.0,2018.0,2019.0])
+selection = alt.selection_single(fields=['Year'], bind=input_dropdown, name='Which  ')
+color = alt.condition(selection,
+                    alt.Color('Year:N', legend=None),
+                    alt.value('lightgray'))
+chart = alt.Chart(df).mark_point().encode(y='Happiness Score:Q',color='Continent:N',
+    tooltip='Country:N')
+chart.encode(x='Social Support:Q').add_selection(
+    selection
+).transform_filter(
+    selection
+) | chart.encode(x='Freedom:Q').add_selection(
+    selection
+).transform_filter(
+    selection
+) & chart.encode(x='Generosity:Q').add_selection(
+    selection
+).transform_filter(
+    selection
+)
 chart
 
 st.markdown('## Projection of world happiness')
