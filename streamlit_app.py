@@ -56,6 +56,14 @@ chart.encode(x='Social Support:Q').add_selection(
     selection)
 
 
+plt.figure(figsize=(10,6))
+
+heatmap = sns.heatmap(df.corr(), vmin=-1,vmax=1, annot=True, cmap='viridis')
+
+heatmap.set_title('Correlation Heatmap', fontdict={'fontsize':12}, pad=12)
+plt.show()
+
+
 st.markdown('## Projection of world happiness')
 
 projdf = df.dropna().reset_index(drop=True)
