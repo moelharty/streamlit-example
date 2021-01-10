@@ -31,8 +31,8 @@ print(data)
 
 # Summary of selected data
 chart = alt.Chart(data).mark_bar().encode(
-    x='Happiness Score',
-    y='Year',
+    x='Year',
+    y='Happiness Score',
     color='Continent'
 ).properties(
     width=300,
