@@ -16,7 +16,8 @@ import numpy as np
 
 df = pd.read_csv('df.csv')
 #df['Year'] = pd.to_datetime(df['Year'],format='%Y')
-df['Year'] = datetime_series.dt.year
+df['Year'] = pd.to_datetime(df['Year'],format='%Y')
+df['Year'] = sr.df['Year']
 
 print(df)
 st.title('world happiness')
