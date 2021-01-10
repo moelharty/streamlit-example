@@ -16,9 +16,8 @@ import numpy as np
 
 df = pd.read_csv('df.csv')
 #df['Year'] = pd.to_datetime(df['Year'],format='%Y')
-df['Year'] = pd.to_datetime(df['Year'],format='%Y')
-df['Year'] = df['Year'].dt.year 
-
+#df['Year'] = pd.to_datetime(df['Year'],format='%Y')
+df['Year'] = df['Year'].astype('int64', copy=False)
 print(df)
 st.title('world happiness')
 st.markdown(
