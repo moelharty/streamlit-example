@@ -31,7 +31,7 @@ print(data)
 
 # Summary of selected data
 chart = alt.Chart(data).mark_bar().encode(
-    x='count()',
+    x='data['Country'].nunique()',
     y='Continent',
     color='Continent'
 ).properties(
